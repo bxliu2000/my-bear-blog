@@ -1,5 +1,6 @@
 {{ define "main" }}
-{{ if eq .Type "blog" }}{{ if not .Params.menu }}
+{{ partial "breadcrumbs.html" . }}
+{{ if not .Params.menu }}
 <h1>{{ .Title }}</h1>
 <p>
   <i>
@@ -8,7 +9,7 @@
     </time>
   </i>
 </p>
-{{ end }}{{ end }}
+{{ end }}
 <content>
   {{ .Content }}
 </content>

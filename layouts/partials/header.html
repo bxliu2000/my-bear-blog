@@ -1,4 +1,8 @@
 <a href="{{ "" | relURL }}" class="title">
   <h2>{{ .Site.Title }}</h2>
 </a>
-<nav>{{- partial "nav.html" . -}}</nav>
+{{ if not .IsPage }}
+  <nav>{{- partial "nav.html" . -}}</nav>
+{{ else }}
+  {{ partial "breadcrumbs.html" }}
+{{ end }}
